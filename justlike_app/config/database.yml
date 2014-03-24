@@ -1,0 +1,9 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: justlike_app_development
+  pool: 5
+  host: localhost
+  username: markpereira
+  password:
