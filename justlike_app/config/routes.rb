@@ -8,6 +8,7 @@ JustlikeApp::Application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'	
+  get '/search' => 'recipes#search'
 
   resources :users, :recipes, :ingredients, :cuisines, :pages 
 end

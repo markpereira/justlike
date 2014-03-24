@@ -35,6 +35,7 @@ end
 gem 'yummly'
 gem 'json'
 gem 'httparty'
+gem 'bootstrap-sass'
 
 #additional debugging gems
 gem 'pry-rails'

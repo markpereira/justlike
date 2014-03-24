@@ -1,0 +1,32 @@
+<%= form_tag('/search', :method => 'get') %>
+
+	<%= label_tag :search %>
+	<%= text_field_tag :search %>
+
+  <%= submit_tag %>
+
+
+  <% if @recipe %>
+
+
+<h1>Recipe Name: <%= @search_result['matches'][1]['recipeName'] %></h1>
+
+<div class="recipe">
+  <div class="image">
+  </div>
+  <div class="details">
+
+    <ul>
+     
+      <li><b>Cuisine:</b> <%= @search_result['matches'][1]['attributes']['cuisine'] %></li>
+      <li><b>Ingredients:</b> <%= @search_result['matches'][1]['ingredients'] %></li>
+      
+    </ul>
+  
+  </div>
+</div> 
+
+<footer><b>Attribution:</b> <%= @search_result['attribution'] %></li></footer
+
+<% end %>
+ 

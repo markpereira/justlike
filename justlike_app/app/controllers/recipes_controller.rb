@@ -31,4 +31,24 @@ class RecipesController < ApplicationController
     recipe.destroy
     redirect_to recipes_path
   end
+
+  def search
+    @status = "no search"
+    search = params[:search]
+    if search.present?
+      search = URI.escape(search)
+      app_key = "43d68684682bf636cfc259b4c36c275c"
+      app_id = "94c36fdb"
+      url = "http://api.yummly.com/v1/api/recipes?_app_id=#{app_id}&_app_key=#{app_key}&q=#{search}"
+      @search_result = HTTParty.get(url) 
+
+      if ["Error"] == "Recipe not found!"
+        @status = "no results"
+      else
+      @status = "found results" 
+      @recipe = @search_result
+      #binding.pry
+      end
+    end 
+  end 
 end
