@@ -11,4 +11,7 @@ class PagesController < ApplicationController
   def intro
   end
 
+  def dashboard
+  end	
+
 end

@@ -16,6 +16,11 @@
 #
 
 class User < ActiveRecord::Base
-	attr_accessible :name, :address_1, :address_2, :city, :postcode, :country, :email, :image
+	attr_accessible :name, :address_1, :address_2, :city, :postcode, :country, :email, :image, :password, :password_confirmation
 	has_and_belongs_to_many :recipes
+
+	has_secure_password
+  	validates :image, :presence => true
+  	validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
+  	validates :email, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
 end	

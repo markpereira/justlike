@@ -39,14 +39,14 @@ class RecipesController < ApplicationController
       search = URI.escape(search)
       app_key = "43d68684682bf636cfc259b4c36c275c"
       app_id = "94c36fdb"
-      url = "http://api.yummly.com/v1/api/recipes?_app_id=#{app_id}&_app_key=#{app_key}&q=#{search}"
-      @search_result = HTTParty.get(url) 
+      url = "http://api.yummly.com/v1/api/recipes?_app_id=#{app_id}&_app_key=#{app_key}&q=#{search}&maxResult=10&start=10"
+      @search_result = HTTParty.get(url)
+      #binding.pry 
 
       if ["Error"] == "Recipe not found!"
         @status = "no results"
       else
       @status = "found results" 
-      @recipe = @search_result
       #binding.pry
       end
     end 

@@ -6,10 +6,13 @@
   <%= submit_tag %>
 
 
-  <% if @recipe %>
+  <% if @search_result %>
 
 
-<h1>Recipe Name: <%= @search_result['matches'][1]['recipeName'] %></h1>
+<h1>Recipe Name: <% @search_result['matches'].each do |match| %>
+
+  <p><%= match['recipeName'] %></p>
+<% end %></h1>
 
 <div class="recipe">
   <div class="image">

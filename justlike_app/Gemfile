@@ -36,6 +36,8 @@ gem 'yummly'
 gem 'json'
 gem 'httparty'
 gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
+gem 'protected_attributes'
 
 #additional debugging gems
 gem 'pry-rails'
@@ -43,7 +45,7 @@ gem 'pry-debugger'
 gem 'pry-stack_explorer'
 gem 'pry'
 gem 'better_errors'
-gem 'protected_attributes'
+
 gem 'annotate'
 
 # Use ActiveModel has_secure_password
