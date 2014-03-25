@@ -8,11 +8,27 @@
 
   <% if @search_result %>
 
+ <% @search_result['matches'].each do |match| %>
 
-<h1>Recipe Name: <% @search_result['matches'].each do |match| %>
+  <h2><%= match['recipeName'] %></h2>
 
-  <p><%= match['recipeName'] %></p>
-<% end %></h1>
+  <p>Ingredients:<% match['ingredients'].each do |ingredient| %></p>
+  <p><%= ingredient %></p>
+  
+  <% end %>
+
+    
+    <p>Source display name:<%= match['sourceDisplayName']%></p> 
+    <p>Rating:<%= match['rating']%></p> 
+    <p>Total cooktime (seconds):<%= match['totalTimeInSeconds']%></p>
+    <p>Recipe ID:<%= match['id']%></p> 
+    <p>Source:<%= match['source']%></p> 
+    
+  
+    <img src="<%= match['smallImageUrls'] %>" />
+
+<% end %>
+
 
 <div class="recipe">
   <div class="image">
@@ -29,7 +45,7 @@
   </div>
 </div> 
 
-<footer><b>Attribution:</b> <%= @search_result['attribution'] %></li></footer
+<footer><b>Attribution:</b> <%== @search_result['attribution'] %></footer
 
 <% end %>
  
